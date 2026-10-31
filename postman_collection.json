@@ -1,0 +1,106 @@
+{
+  "info": {
+    "name": "Mini AI BI Assistant",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health Check",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8000/health"
+      }
+    },
+    {
+      "name": "Data Summary",
+      "request": {
+        "method": "GET",
+        "url": "http://localhost:8000/data-summary"
+      }
+    },
+    {
+      "name": "Ask: Total Revenue",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8000/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"question\": \"What is the total revenue?\"}"
+        }
+      }
+    },
+    {
+      "name": "Ask: Top Product by Revenue",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8000/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"question\": \"Which product generated the highest revenue?\"}"
+        }
+      }
+    },
+    {
+      "name": "Ask: Monthly Revenue Trend",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8000/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"question\": \"What is the monthly revenue trend?\"}"
+        }
+      }
+    },
+    {
+      "name": "Ask: Top Region by Revenue",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8000/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"question\": \"Which region generated the highest sales?\"}"
+        }
+      }
+    },
+    {
+      "name": "Ask: Revenue Change Between Months",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8000/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"question\": \"How did revenue change between 2026-01 and 2026-02?\"}"
+        }
+      }
+    },
+    {
+      "name": "Ask: Unsupported Question",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8000/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"question\": \"What is the capital of France?\"}"
+        }
+      }
+    },
+    {
+      "name": "Ask: Empty Question (expects 422)",
+      "request": {
+        "method": "POST",
+        "url": "http://localhost:8000/ask",
+        "header": [{"key": "Content-Type", "value": "application/json"}],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"question\": \"\"}"
+        }
+      }
+    }
+  ]
+}
